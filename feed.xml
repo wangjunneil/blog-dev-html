@@ -8,6 +8,297 @@
         <atom:link href="https://www.wangjun.dev/feed.xml" rel="self" type="application/rss+xml" />  
           
             <item>  
+               <title>Linux 中使用 tee 和 cat 编辑文本的方式</title>  
+               <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#tee&quot; id=&quot;markdown-toc-tee&quot;&gt;tee&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#cat&quot; id=&quot;markdown-toc-cat&quot;&gt;cat&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;tee&quot;&gt;tee&lt;/h1&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 覆盖就使用 tee &amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 追加就使用 tee &amp;gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# &amp;lt;&amp;lt; [结束关键字]，如这里的DONE，&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;tee&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; a.py &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;DONE&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;
+heredoc&amp;gt; #!/usr/bin/env python3
+heredoc&amp;gt; 
+heredoc&amp;gt; print('Hello World')
+heredoc&amp;gt; DONE
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;cat&quot;&gt;cat&lt;/h1&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 覆盖就使用 cat &amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 追加就使用 cat &amp;gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 结束编辑使用 CTRL+D&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; a.py
+&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env python3&lt;/span&gt;
+print&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Hello World'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>  
+               <pubDate>Thu, 29 Jun 2023 00:00:00 +0800</pubDate>  
+               <link>https://www.wangjun.dev/2023/06/how-to-use-tee-cat-command/</link>  
+               <guid isPermaLink="true">https://www.wangjun.dev/2023/06/how-to-use-tee-cat-command/</guid>  
+               </item>  
+          
+            <item>  
+               <title>python telegram bot 开发</title>  
+               <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-通过-botfather-创建-bot&quot; id=&quot;markdown-toc-1-通过-botfather-创建-bot&quot;&gt;1. 通过 botfather 创建 bot&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#11-创建-bot-获取-accesstoken&quot; id=&quot;markdown-toc-11-创建-bot-获取-accesstoken&quot;&gt;1.1. 创建 bot 获取 accesstoken&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#12-可选的-bot-设置&quot; id=&quot;markdown-toc-12-可选的-bot-设置&quot;&gt;1.2. 可选的 bot 设置&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#13-可选的菜单配置&quot; id=&quot;markdown-toc-13-可选的菜单配置&quot;&gt;1.3. 可选的菜单配置&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-使用-python-telegram-库开发&quot; id=&quot;markdown-toc-2-使用-python-telegram-库开发&quot;&gt;2. 使用 python telegram 库开发&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#21-安装-python-telegram-库&quot; id=&quot;markdown-toc-21-安装-python-telegram-库&quot;&gt;2.1. 安装 python telegram 库&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#22-使用-python-telegram-库&quot; id=&quot;markdown-toc-22-使用-python-telegram-库&quot;&gt;2.2. 使用 python telegram 库&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-免费的服务器托管-python&quot; id=&quot;markdown-toc-3-免费的服务器托管-python&quot;&gt;3. 免费的服务器托管 python&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;Reference&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;1-通过-botfather-创建-bot&quot;&gt;1. 通过 botfather 创建 bot&lt;/h1&gt;
+
+&lt;h2 id=&quot;11-创建-bot-获取-accesstoken&quot;&gt;1.1. 创建 bot 获取 accesstoken&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://fla.cdn.bosyun.com/wangjundev/Screenshot%202023-06-02%20at%2022.57.23.png?imageView2/0/format/webp/q/75&quot; alt=&quot;Screenshot 2023-06-02 at 22.57.23&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;12-可选的-bot-设置&quot;&gt;1.2. 可选的 bot 设置&lt;/h2&gt;
+
+&lt;p&gt;继续给 botfather 发送指令，为我们的 bot 配置一些基本信息：&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/setdescription	# bot 描述
+/setabouttext		# bot 关于
+/setuserpic			# bot 图片
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;13-可选的菜单配置&quot;&gt;1.3. 可选的菜单配置&lt;/h2&gt;
+
+&lt;p&gt;在 botfather 中使用指令 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/setcommands&lt;/code&gt; 配置我们的 bot 菜单&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://fla.cdn.bosyun.com/wangjundev/Screenshot%202023-06-03%20at%2009.39.51.png?imageView2/0/format/webp/q/75&quot; alt=&quot;Screenshot 2023-06-03 at 09.39.51&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://fla.cdn.bosyun.com/wangjundev/Screenshot%202023-06-03%20at%2009.39.07.png?imageView2/0/format/webp/q/75&quot; alt=&quot;Screenshot 2023-06-03 at 09.39.07&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;2-使用-python-telegram-库开发&quot;&gt;2. 使用 python telegram 库开发&lt;/h1&gt;
+
+&lt;h2 id=&quot;21-安装-python-telegram-库&quot;&gt;2.1. 安装 python telegram 库&lt;/h2&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip3 &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;python-telegram-bot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;22-使用-python-telegram-库&quot;&gt;2.2. 使用 python telegram 库&lt;/h2&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;typing&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Final&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;telegram&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Update&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;telegram.ext&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CommandHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MessageHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ContextTypes&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;TOKEN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Final&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'6052882804:AAEfmyN6lThO5RtBlbGyo92Pp4JtKMwoD0A'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;BOT_USERNAME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Final&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'@heikeu_bot'&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Commands
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;start_command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ContextTypes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DEFAULT_TYPE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reply_text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hello, thanks you for chatting me, this is 嘿壳 bot'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;help_command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ContextTypes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DEFAULT_TYPE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reply_text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'i am 嘿壳 bot, please type something and i respond'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;custom_command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ContextTypes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DEFAULT_TYPE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reply_text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'this is custom command'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Response
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;handle_response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;processd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;processd&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'hi'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'hey there!'&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'how are you'&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;processd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'fine, thank you.'&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'i love python'&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;processd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'remember to substribe!'&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;' i do not understand what you wrote...'&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;handle_message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ContextTypes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DEFAULT_TYPE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;message_type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'User (&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;chat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;) in &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message_type&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;: &quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message_type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'group'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BOT_USERNAME&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;new_text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BOT_USERNAME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handle_response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handle_response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Bot:'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reply_text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ContextTypes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DEFAULT_TYPE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Update &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; caused error &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'__main__'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Starting bot...'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;builder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;token&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TOKEN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Commands
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_handler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CommandHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'start'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start_command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_handler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CommandHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'help'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;help_command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_handler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CommandHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'custom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;custom_command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Message
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_handler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MessageHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handle_message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Error
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_error_handler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Polls the bot
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Polling...'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run_polling&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;poll_interval&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;3-免费的服务器托管-python&quot;&gt;3. 免费的服务器托管 python&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.pythonanywhere.com/&quot;&gt;pythonanywhere&lt;/a&gt; 可以免费托管 python 程序，支持 web、cron 以及提供的 mysql 和 postgresql 数据库，这里我们只使用普通的 python 程序即可&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;首次运行，不要忘记在 bash 环境使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pip install python-telegram-bot&lt;/code&gt; 按照依赖库&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://fla.cdn.bosyun.com/wangjundev/Screenshot%202023-06-04%20at%2009.20.57.png?imageView2/0/format/webp/q/75&quot; alt=&quot;Screenshot 2023-06-04 at 09.20.57&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://fla.cdn.bosyun.com/wangjundev/Screenshot%202023-06-04%20at%2009.21.25.png?imageView2/0/format/webp/q/75&quot; alt=&quot;Screenshot 2023-06-04 at 09.21.25&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;reference&quot;&gt;Reference&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=vZtm1wuA2yc&quot;&gt;How To Create A Telegram Bot In Python For Beginners (2023 Tutorial)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://core.telegram.org/api&quot;&gt;Telegram APIs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.pythonanywhere.com/&quot;&gt;pythonanywhere&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>  
+               <pubDate>Fri, 02 Jun 2023 00:00:00 +0800</pubDate>  
+               <link>https://www.wangjun.dev/2023/06/telegram-bot/</link>  
+               <guid isPermaLink="true">https://www.wangjun.dev/2023/06/telegram-bot/</guid>  
+               </item>  
+          
+            <item>  
+               <title>由浅入深 python selenium 的使用</title>  
+               <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-使用前提&quot; id=&quot;markdown-toc-1-使用前提&quot;&gt;1. 使用前提&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#11-依赖库的安装&quot; id=&quot;markdown-toc-11-依赖库的安装&quot;&gt;1.1. 依赖库的安装&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#12-驱动执行文件&quot; id=&quot;markdown-toc-12-驱动执行文件&quot;&gt;1.2. 驱动执行文件&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-使用方式&quot; id=&quot;markdown-toc-2-使用方式&quot;&gt;2. 使用方式&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#21-快速开始&quot; id=&quot;markdown-toc-21-快速开始&quot;&gt;2.1. 快速开始&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#22-浏览器参数&quot; id=&quot;markdown-toc-22-浏览器参数&quot;&gt;2.2. 浏览器参数&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;1-使用前提&quot;&gt;1. 使用前提&lt;/h2&gt;
+
+&lt;h3 id=&quot;11-依赖库的安装&quot;&gt;1.1. 依赖库的安装&lt;/h3&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip3 &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;selenium &lt;span class=&quot;c&quot;&gt;# selenium 目前使用4.x.x的版本&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;12-驱动执行文件&quot;&gt;1.2. 驱动执行文件&lt;/h3&gt;
+
+&lt;p&gt;打开 Chrome 浏览器，输入 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;chrome://version&lt;/code&gt; 查看 Chromium 版本号，如：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Chromium: 112.0.5615.138&lt;/code&gt;，再去 &lt;a href=&quot;https://chromedriver.storage.googleapis.com/index.html&quot;&gt;chrome driver&lt;/a&gt; 找到对应版本的驱动程序，下载保存。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;这里浏览器不局限于 Google Chrome，只要是任何 Chromium 内核构建的都可以，作者使用的是 brave 浏览器&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;2-使用方式&quot;&gt;2. 使用方式&lt;/h2&gt;
+
+&lt;h3 id=&quot;21-快速开始&quot;&gt;2.1. 快速开始&lt;/h3&gt;
+
+&lt;p&gt;下面的程序作用是自动打开浏览器进入百度搜索，输入关键字后点击搜索按钮，完成自动执行，浏览器不关闭。&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;selenium&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;webdriver&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;selenium.webdriver.chrome.service&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Service&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;selenium.webdriver.support.ui&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WebDriverWait&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;selenium.webdriver.common.by&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;By&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 浏览器程序与驱动路径
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BROWSER_LOCATION&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'C:\Program Files\Google\Chrome\Application\chrome.exe'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;DRIVER_LOCATION&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'D:\SeleniumDriver\chromedriver.exe'&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 初始化
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;webdriver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ChromeOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_experimental_option&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;detach&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_argument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'--ignore-certificate-errors'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;binary_location&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BROWSER_LOCATION&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;driver&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;webdriver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Chrome&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Service&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;executable_path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DRIVER_LOCATION&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 打开网址
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;driver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'https://www.baidu.com'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;driver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maximize_window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 解释 javascript 脚本
+# driver.execute_script('window.location.href=&quot;https://www.google.com&quot;')
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;search_box&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;driver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;By&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NAME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'wd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;search_box&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send_keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'chatgpt使用'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;search_button&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;driver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find_element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;By&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'su'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;search_button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 关闭浏览器
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;driver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;22-浏览器参数&quot;&gt;2.2. 浏览器参数&lt;/h3&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;webdriver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ChromeOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 设置useragent
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_argument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'--user-agent=user_agent'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 忽略浏览器证书错误
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_argument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;--ignore-certificate-errors&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 无界面模式，对于自动化测试和爬虫等任务非常有用，可提高运行效率，并减少资源消耗，因为不需要渲染和显示页面
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_argument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'--headless'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 开发者模式
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_argument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;--auto-open-devtools-for-tabs&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+
+&lt;span class=&quot;c1&quot;&gt;# 设置代理
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_argument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'--proxy-server=http://ip:port'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# 浏览器的命令开关选项
+# enable-logging，在启动时不要启用日志记录功能，这可以减少浏览器在控制台输出日志的数量
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_experimental_option&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'excludeSwitches'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'enable-logging'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+ &lt;span class=&quot;c1&quot;&gt;# 手机模式
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_experimental_option&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;mobileEmulation&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;deviceName&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;iPhone 12 Pro&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;更多的选项参看，&lt;a href=&quot;https://peter.sh/experiments/chromium-command-line-switches/#disable-touch-drag-drop&quot;&gt;https://peter.sh/experiments/chromium-command-line-switches/#disable-touch-drag-drop&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>  
+               <pubDate>Sat, 13 May 2023 00:00:00 +0800</pubDate>  
+               <link>https://www.wangjun.dev/2023/05/python-selenium/</link>  
+               <guid isPermaLink="true">https://www.wangjun.dev/2023/05/python-selenium/</guid>  
+               </item>  
+          
+            <item>  
                <title>去中心化的宠物领养 DApp 应用</title>  
                <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#1-知识点&quot; id=&quot;markdown-toc-1-知识点&quot;&gt;1. 知识点&lt;/a&gt;&lt;/li&gt;
@@ -920,442 +1211,6 @@ truffle version
                <pubDate>Wed, 20 Nov 2019 00:00:00 +0800</pubDate>  
                <link>https://www.wangjun.dev/2019/11/confluence-build/</link>  
                <guid isPermaLink="true">https://www.wangjun.dev/2019/11/confluence-build/</guid>  
-               </item>  
-          
-            <item>  
-               <title>旅行必备 Wireguard 的搭建与使用</title>  
-               <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#1-介绍&quot; id=&quot;markdown-toc-1-介绍&quot;&gt;1. 介绍&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#2-安装和使用&quot; id=&quot;markdown-toc-2-安装和使用&quot;&gt;2. 安装和使用&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#21-创建实例&quot; id=&quot;markdown-toc-21-创建实例&quot;&gt;2.1 创建实例&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#22-执行安装&quot; id=&quot;markdown-toc-22-执行安装&quot;&gt;2.2 执行安装&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#23-防火墙规则&quot; id=&quot;markdown-toc-23-防火墙规则&quot;&gt;2.3 防火墙规则&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#24-客户端使用&quot; id=&quot;markdown-toc-24-客户端使用&quot;&gt;2.4 客户端使用&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;//via.placeholder.com/594x311?text=&amp;quot;&amp;quot;&quot; alt=&quot;wireguard&quot; data-src=&quot;//vinnycc.oss-cn-shanghai.aliyuncs.com/20190610/og-logo.png&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;1-介绍&quot;&gt;1. 介绍&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.wireguard.com/&quot;&gt;WireGuard&lt;/a&gt; 是 Jason A. Donenfeld 开发的开源VPN协议。目前已经支持Linux, macOS, Android, iOS以及OpenWrt平台。WireGuard使用UDP协议传输数据，在不使用的情况下默认不会传输任何 UDP 数据包，所以比常规VPN省电很多，可以像SS一样一直挂着使用。WireGuard协议的速度瞬秒其它VPN协议。&lt;/p&gt;
-
-&lt;h2 id=&quot;2-安装和使用&quot;&gt;2. 安装和使用&lt;/h2&gt;
-
-&lt;h3 id=&quot;21-创建实例&quot;&gt;2.1 创建实例&lt;/h3&gt;
-
-&lt;p&gt;参考 &lt;a href=&quot;//wangjun.dev/2019/06/ssr-build/&quot;&gt;旅行必备 ShadowsocketR 搭建与使用&lt;/a&gt; 中的创建实例&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;唯一区别就是系统选择Centos7&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;22-执行安装&quot;&gt;2.2 执行安装&lt;/h3&gt;
-
-&lt;p&gt;打开 vm 实例的 ssh 终端，输入以下命令执行安装：&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 切换成root用户&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 安装wget工具&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;yum &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt; wget
-
-&lt;span class=&quot;c&quot;&gt;# 下载一键安装脚本&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;wget https://raw.githubusercontent.com/yobabyshark/wireguard/master/wireguard_install.sh
-
-&lt;span class=&quot;c&quot;&gt;# 授权并执行&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;chmod&lt;/span&gt; +x wireguard_install.sh &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ./wireguard_install.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;先升级系统内核，选择1，等待升级完成后，执行&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;reboot&lt;/code&gt;重启系统&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. 升级系统内核
-2. 安装wireguard
-3. 升级wireguard
-4. 卸载wireguard
-5. 显示客户端二维码
-6. 增加用户
-0. 退出脚
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;系统重启完成后，再次执行一键安装脚本&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./wireguard_install.sh&lt;/code&gt;，这次选择&lt;strong&gt;安装wireguard&lt;/strong&gt;，等待执行完成后，会显示配置二维码和配置信息，如下：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//via.placeholder.com/487x713?text=&amp;quot;&amp;quot;&quot; alt=&quot;wireguard-result&quot; data-src=&quot;//vinnycc.oss-cn-shanghai.aliyuncs.com/20190610/wireguard-result.png&quot; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;二维码内容就是 /etc/wireguard/client.conf 文件内容&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;23-防火墙规则&quot;&gt;2.3 防火墙规则&lt;/h3&gt;
-
-&lt;p&gt;wireguard安装完后，查看随机分配的端口号，如上面截图中的是38597，确定在防火墙规则中开放了对此端口号的出入站。&lt;/p&gt;
-
-&lt;h3 id=&quot;24-客户端使用&quot;&gt;2.4 客户端使用&lt;/h3&gt;
-
-&lt;p&gt;IOS与Mac客户端可以在appstore里直接下载wireguard，但需要使用美区账号。&lt;/p&gt;
-
-&lt;p&gt;Window端下载 &lt;a href=&quot;https://tunsafe.com/download&quot;&gt;https://tunsafe.com/download&lt;/a&gt;&lt;/p&gt;
-</description>  
-               <pubDate>Fri, 07 Jun 2019 00:00:00 +0800</pubDate>  
-               <link>https://www.wangjun.dev/2019/06/wireguard-build/</link>  
-               <guid isPermaLink="true">https://www.wangjun.dev/2019/06/wireguard-build/</guid>  
-               </item>  
-          
-            <item>  
-               <title>旅行必备 V2Ray 的高级使用方式</title>  
-               <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#1-介绍&quot; id=&quot;markdown-toc-1-介绍&quot;&gt;1. 介绍&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#2-安装和使用&quot; id=&quot;markdown-toc-2-安装和使用&quot;&gt;2. 安装和使用&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#21-创建实例&quot; id=&quot;markdown-toc-21-创建实例&quot;&gt;2.1 创建实例&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#22-执行安装&quot; id=&quot;markdown-toc-22-执行安装&quot;&gt;2.2 执行安装&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#23-配置文件&quot; id=&quot;markdown-toc-23-配置文件&quot;&gt;2.3 配置文件&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#24-重启服务&quot; id=&quot;markdown-toc-24-重启服务&quot;&gt;2.4 重启服务&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#25-配置连接&quot; id=&quot;markdown-toc-25-配置连接&quot;&gt;2.5 配置连接&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#3-欺骗与伪装&quot; id=&quot;markdown-toc-3-欺骗与伪装&quot;&gt;3. 欺骗与伪装&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#31-整体方案&quot; id=&quot;markdown-toc-31-整体方案&quot;&gt;3.1 整体方案&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#32-安装nginx&quot; id=&quot;markdown-toc-32-安装nginx&quot;&gt;3.2 安装nginx&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#33-域名解析&quot; id=&quot;markdown-toc-33-域名解析&quot;&gt;3.3 域名解析&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#34-安全证书&quot; id=&quot;markdown-toc-34-安全证书&quot;&gt;3.4 安全证书&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#35-隐藏地址&quot; id=&quot;markdown-toc-35-隐藏地址&quot;&gt;3.5 隐藏地址&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#36-配置v2ray&quot; id=&quot;markdown-toc-36-配置v2ray&quot;&gt;3.6 配置v2ray&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#37-代理转发&quot; id=&quot;markdown-toc-37-代理转发&quot;&gt;3.7 代理转发&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#38-配置连接&quot; id=&quot;markdown-toc-38-配置连接&quot;&gt;3.8 配置连接&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#完整的配置&quot; id=&quot;markdown-toc-完整的配置&quot;&gt;完整的配置&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;1-介绍&quot;&gt;1. 介绍&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;//www.v2ray.com/&quot;&gt;V2Ray&lt;/a&gt; 是一个与 Shadowsocks 类似的代理软件，很多人可能会想当然地将 V2Ray 看作一个特定的翻墙协议或用于实现该协议的翻墙软件。但实际上是一个融合了各种翻墙协议的集成性软件，其中只有 VMess 协议是 V2Ray 社区原创的翻墙协议。&lt;/p&gt;
-
-&lt;h2 id=&quot;2-安装和使用&quot;&gt;2. 安装和使用&lt;/h2&gt;
-
-&lt;h3 id=&quot;21-创建实例&quot;&gt;2.1 创建实例&lt;/h3&gt;
-
-&lt;p&gt;参考 &lt;a href=&quot;//wangjun.dev/2019/06/ssr-build/&quot;&gt;旅行必备 ShadowsocketR 搭建与使用&lt;/a&gt; 中的创建实例&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;唯一区别就是建议将CPU设置为”n1标准型”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;22-执行安装&quot;&gt;2.2 执行安装&lt;/h3&gt;
-
-&lt;p&gt;打开 vm 实例的 ssh 终端，输入以下命令执行安装：&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 切换成root用户&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 同步本地时间&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cp&lt;/span&gt; /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-
-&lt;span class=&quot;c&quot;&gt;# 执行一键安装脚本&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bash &amp;lt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-L&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; https://install.direct/go.sh&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;终端显示”V2Ray v4.19.1 is installed.”，表示已经安装完成。&lt;/p&gt;
-
-&lt;h3 id=&quot;23-配置文件&quot;&gt;2.3 配置文件&lt;/h3&gt;
-
-&lt;p&gt;点击下载 &lt;a href=&quot;//vinnycc.oss-cn-shanghai.aliyuncs.com/20190605/config.json&quot;&gt;config.json&lt;/a&gt; 配置文件，修改 port、id、alterId 字段，id和alterId随意变更，保持位数一致。port 最好使用已经配置好防火墙规则的端口（关于配置防火墙规则请参看 &lt;a href=&quot;//wangjun.dev/2019/06/ssr-build/&quot;&gt;旅行必备 ShadowsocketR 搭建与使用&lt;/a&gt; 中的配置防火墙一节）。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//via.placeholder.com/599x397?text=&amp;quot;&amp;quot;&quot; alt=&quot;v2ray-config-json&quot; data-src=&quot;//vinnycc.oss-cn-shanghai.aliyuncs.com/20190605/v2ray-config-json.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;准备好 v2ray 的配置内容后，到刚才创建的实例中，使用命令&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vi /etc/v2ray/config.json&lt;/code&gt;打开v2ray的配置文件，删除里面全部内容，将准备好的配置明细复制进去，复制的格式很乱，不需要关心，v2ray会正常解析&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;小技巧，vi编辑器中使用命令 :set paste 打开粘贴模式可以保证格式&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;24-重启服务&quot;&gt;2.4 重启服务&lt;/h3&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 重新启动v2ray服务&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;systemctl restart v2ray
-
-&lt;span class=&quot;c&quot;&gt;# 查询启动后服务状态&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;systemctl status v2ray
-
-&lt;span class=&quot;c&quot;&gt;# 将v2ray服务注册为开机自自动&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;systemctl &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;v2ray
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;25-配置连接&quot;&gt;2.5 配置连接&lt;/h3&gt;
-
-&lt;p&gt;点击下载 &lt;a href=&quot;//github.com/Cenmrev/V2RayX/releases&quot;&gt;v2ray&lt;/a&gt; 客户端并安装。&lt;/p&gt;
-
-&lt;p&gt;所有配置在上面的json中都可以找到，配置如下：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//via.placeholder.com/599x549?text=&amp;quot;&amp;quot;&quot; alt=&quot;v2ray-client&quot; data-src=&quot;//vinnycc.oss-cn-shanghai.aliyuncs.com/20190605/v2ray-client.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;配置完成并save后，点击load core即可开启国际旅行&lt;/p&gt;
-
-&lt;h2 id=&quot;3-欺骗与伪装&quot;&gt;3. 欺骗与伪装&lt;/h2&gt;
-
-&lt;p&gt;上面的配置方式是直连 v2ray 服务端，虽然使用的是 vmes 协议这种冷门协议，尽管也对传输体进行了aes的加密，但不排除伟大的墙会找到协议的特征码进行block，为了达到极致效果，基于上述继续我们的升级计划。&lt;/p&gt;
-
-&lt;h3 id=&quot;31-整体方案&quot;&gt;3.1 整体方案&lt;/h3&gt;
-
-&lt;p&gt;[v2ray + websocket + tls + nginx + cdn]&lt;/p&gt;
-
-&lt;p&gt;此处应有图，懒的画了，自己理解。&lt;/p&gt;
-
-&lt;h3 id=&quot;32-安装nginx&quot;&gt;3.2 安装nginx&lt;/h3&gt;
-
-&lt;p&gt;继续在上面的服务器中执行以下命令安装nginx反向代理服务器（这也是为什么在第一步要求CPU稍微高点的原因，毕竟需要安装两个服务，不能使用微型CPU配置）&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 切换成root用户&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 安装nginx服务&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;nginx
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;安装完成后，默认nginx就已经启动，可以使用命令&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;netstat -an | grep 80&lt;/code&gt;看看端口是否处于 listen 状态，打开浏览器，直接输入服务器的IP地址应该可以看到nginx的欢迎界面，如下：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//via.placeholder.com/599x454?text=&amp;quot;&amp;quot;&quot; alt=&quot;nginx&quot; data-src=&quot;//vinnycc.oss-cn-shanghai.aliyuncs.com/20190605/nginx.png&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;33-域名解析&quot;&gt;3.3 域名解析&lt;/h3&gt;
-
-&lt;p&gt;这里使用在阿里云注册的域名为例，如果没有的话，可以在 &lt;a href=&quot;https://www.freenom.com/zh/index.html?lang=zh&quot;&gt;freenom&lt;/a&gt; 可以申请免费域名。将域名解析到上面服务器的公网IP上，添加一个记录，记录类型为A，主机记录为ray，这样就将二级域名 ray.wangjun.bid 解析到了对应的 Google 云服务器上。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//via.placeholder.com/599x366?text=&amp;quot;&amp;quot;&quot; alt=&quot;aliyun-parse&quot; data-src=&quot;//vinnycc.oss-cn-shanghai.aliyuncs.com/20190605/aliyun-parse.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;到服务器上使用命令&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vi /etc/nginx/sites-available/default&lt;/code&gt;打开nginx配置文件，删除里面所有内容，将域名配置到nginx的配置文件中，最终内容如下：&lt;/p&gt;
-
-&lt;div class=&quot;language-conf highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;server&lt;/span&gt; {
-    &lt;span class=&quot;n&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;80&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default_server&lt;/span&gt;;
-    &lt;span class=&quot;n&quot;&gt;listen&lt;/span&gt; [::]:&lt;span class=&quot;m&quot;&gt;80&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default_server&lt;/span&gt;;
-
-    &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; /&lt;span class=&quot;n&quot;&gt;var&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;www&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;html&lt;/span&gt;;
-    &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;html&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;htm&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;nginx&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;debian&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;html&lt;/span&gt;;
-
-    &lt;span class=&quot;c&quot;&gt;# 这里使用自己定义的域名
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;server_name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ray&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;wangjun&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;bid&lt;/span&gt;;
-
-    &lt;span class=&quot;n&quot;&gt;location&lt;/span&gt; / {
-        &lt;span class=&quot;n&quot;&gt;try_files&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;uri&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;uri&lt;/span&gt;/ =&lt;span class=&quot;m&quot;&gt;404&lt;/span&gt;;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;保存配置，并在终端中使用命令&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nginx -s reload&lt;/code&gt;让nginx重新加载配置，若没有任何信息输出表示配置正确，重新打开浏览器使用域名访问应能正常显示nginx的欢迎页面，说明域名解析成功。&lt;/p&gt;
-
-&lt;h3 id=&quot;34-安全证书&quot;&gt;3.4 安全证书&lt;/h3&gt;
-
-&lt;p&gt;上面的输出说明我们正常解析了域名，但80端口的HTTP协议是明文传输的，我们需要在HTTP协议上层在加上TLS的HTTPS协议，使传输内容加密。&lt;/p&gt;
-
-&lt;p&gt;要为站点申请HTTPs证书，可以使用 &lt;a href=&quot;https://letsencrypt.org/&quot;&gt;letsencrypt&lt;/a&gt; 机构颁发的免费证书，省钱又可靠，letsencrypt 有个工具 &lt;a href=&quot;https://certbot.eff.org&quot;&gt;certbot&lt;/a&gt;，全自动生成证书，下面是使用方法。&lt;/p&gt;
-
-&lt;p&gt;系统版本和代理服务器安装方式不一样，根据自己的配置来，这里在 Google 云创建的是 debian9 的操作系统，代理服务器使用的是 nginx，所以：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//via.placeholder.com/599x454?text=&amp;quot;&amp;quot;&quot; alt=&quot;certboot&quot; data-src=&quot;//vinnycc.oss-cn-shanghai.aliyuncs.com/20190605/certboot.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;那我们的安装方式就是：&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 切换成root用户&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# 安装certbot及其依赖&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;certbot python-certbot-nginx &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; stretch-backports
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;颁发证书&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;certbot &lt;span class=&quot;nt&quot;&gt;--nginx&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这里会要求输入和选择几项配置，具体如下：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//via.placeholder.com/599x735?text=&amp;quot;&amp;quot;&quot; alt=&quot;publish-cert&quot; data-src=&quot;//vinnycc.oss-cn-shanghai.aliyuncs.com/20190605/publish-cert.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;出现”Congratulations”说明命令执行成功，重新打开浏览器输入&lt;strong&gt;https://域名&lt;/strong&gt;可以正常看见nginx欢迎界面，且浏览器网址左边的小锁正常显示，HTTPS配置完成。&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;letsencrypt 为我们颁发的HTTPs证书有效期是90天，90天后证书会失效，可以使用命令&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;certbot renew --dry-run&lt;/code&gt;重新颁发一次，当然最好在cron中配置好定时任务来自动执行&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;35-隐藏地址&quot;&gt;3.5 隐藏地址&lt;/h3&gt;
-
-&lt;p&gt;Ping域名可以得到真实的服务器地址，尽管可以禁ping命令，但仍有很多工具可以发现我们在 Google 云上真实的服务器IP，这里使用CDN让域名指向地址变得隐藏，尽管这不是绝对的，但仍能杜绝大部分想获取服务器IP的方法。&lt;/p&gt;
-
-&lt;p&gt;CDN同样我们选择免费的，免费即王道，这里选择 &lt;a href=&quot;https://www.cloudflare.com/zh-cn/&quot;&gt;CloudFlare&lt;/a&gt;，具体操作如下：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//via.placeholder.com/599x440?text=&amp;quot;&amp;quot;&quot; alt=&quot;CloudFlare-addsite&quot; data-src=&quot;//vinnycc.oss-cn-shanghai.aliyuncs.com/20190605/CloudFlare-addsite.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//via.placeholder.com/599x440?text=&amp;quot;&amp;quot;&quot; alt=&quot;CloudFlare-freeplan&quot; data-src=&quot;//vinnycc.oss-cn-shanghai.aliyuncs.com/20190605/CloudFlare-freeplan.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//via.placeholder.com/599x440?text=&amp;quot;&amp;quot;&quot; alt=&quot;CloudFlare-parse&quot; data-src=&quot;//vinnycc.oss-cn-shanghai.aliyuncs.com/20190605/CloudFlare-parse.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//via.placeholder.com/599x440?text=&amp;quot;&amp;quot;&quot; alt=&quot;CloudFlare-dns&quot; data-src=&quot;//vinnycc.oss-cn-shanghai.aliyuncs.com/20190605/CloudFlare-dns.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;经过上面的操作，CloudFlare配置已经完成，最后在阿里云域名下将对应域名的 DNS 解析为 CloudFlare 为我们分配的 DNS 记录，点击确定即可&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//via.placeholder.com/599x356?text=&amp;quot;&amp;quot;&quot; alt=&quot;aliyun-edit-dns&quot; data-src=&quot;//vinnycc.oss-cn-shanghai.aliyuncs.com/20190605/aliyun-edit-dns.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;CDN已经配置完成&lt;/p&gt;
-
-&lt;h3 id=&quot;36-配置v2ray&quot;&gt;3.6 配置v2ray&lt;/h3&gt;
-
-&lt;p&gt;我们上面的操作都与v2ray没有任何关系，只是创建了一个普通的HTTPS的静态站点，现在我们这才开始将其关联。&lt;/p&gt;
-
-&lt;p&gt;编辑&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vi /etc/v2ray/config.json&lt;/code&gt;文件修改和新增如下配置&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//via.placeholder.com/599x611?text=&amp;quot;&amp;quot;&quot; alt=&quot;v2ray-config-update&quot; data-src=&quot;//vinnycc.oss-cn-shanghai.aliyuncs.com/20190605/v2ray-config-update.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这里为什么改端口，之前的端口已经配置在防火墙的出入站规则中，外部是可以直接访问，反向代理一个重要的原则是隐藏内部应用，统一出入口，所以端口只需要设置一个不在防火墙规则里的1024～65535之间的值即可。&lt;/p&gt;
-
-&lt;p&gt;重新启动v2ray并查看启动状态&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;systemctl restart v2ray
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;systemctl status v2ray
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;一切正常，恭喜你，你已经不能使用 v2ray 服务了，因为目前 v2ray 服务只是在服务器内部启动，并没有对外开放，只能服务器内部访问，如果暴露 v2ray 服务，这是下一步做的事情。&lt;/p&gt;
-
-&lt;h3 id=&quot;37-代理转发&quot;&gt;3.7 代理转发&lt;/h3&gt;
-
-&lt;p&gt;编辑nginx配置文件&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vi /etc/nginx/sites-available/default&lt;/code&gt;，内容有些乱，是因为在使用certbot生成HTTPS证书时自动改的，不管，直接使用复制下面在nginx的配置，配置v2ray的反向代理，最终结果如下：&lt;/p&gt;
-
-&lt;div class=&quot;language-conf highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;server&lt;/span&gt; {
-    &lt;span class=&quot;n&quot;&gt;listen&lt;/span&gt; [::]:&lt;span class=&quot;m&quot;&gt;443&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ssl&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ipv6only&lt;/span&gt;=&lt;span class=&quot;n&quot;&gt;on&lt;/span&gt;;
-    &lt;span class=&quot;n&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;443&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ssl&lt;/span&gt;;
-
-    &lt;span class=&quot;c&quot;&gt;# 这里填写自己的证书路径
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;ssl_certificate&lt;/span&gt; /&lt;span class=&quot;n&quot;&gt;etc&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;letsencrypt&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;live&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;ray&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;wangjun&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;bid&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;fullchain&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;pem&lt;/span&gt;;
-    &lt;span class=&quot;n&quot;&gt;ssl_certificate_key&lt;/span&gt; /&lt;span class=&quot;n&quot;&gt;etc&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;letsencrypt&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;live&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;ray&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;wangjun&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;bid&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;privkey&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;pem&lt;/span&gt;;
-    
-    &lt;span class=&quot;n&quot;&gt;include&lt;/span&gt; /&lt;span class=&quot;n&quot;&gt;etc&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;letsencrypt&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;ssl&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;nginx&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;conf&lt;/span&gt;;
-    &lt;span class=&quot;n&quot;&gt;ssl_dhparam&lt;/span&gt; /&lt;span class=&quot;n&quot;&gt;etc&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;letsencrypt&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;ssl&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;dhparams&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;pem&lt;/span&gt;;
-
-    &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; /&lt;span class=&quot;n&quot;&gt;var&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;www&lt;/span&gt;/&lt;span class=&quot;n&quot;&gt;html&lt;/span&gt;;
-    &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;html&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;htm&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;nginx&lt;/span&gt;-&lt;span class=&quot;n&quot;&gt;debian&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;html&lt;/span&gt;;
-
-    &lt;span class=&quot;c&quot;&gt;# 这里填写自己的域名
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;server_name&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ray&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;wangjun&lt;/span&gt;.&lt;span class=&quot;n&quot;&gt;bid&lt;/span&gt;;
-
-    &lt;span class=&quot;n&quot;&gt;location&lt;/span&gt; / {
-        &lt;span class=&quot;n&quot;&gt;try_files&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;uri&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;uri&lt;/span&gt;/ =&lt;span class=&quot;m&quot;&gt;404&lt;/span&gt;;
-    }
-
-    &lt;span class=&quot;c&quot;&gt;# ========== 增加的配置 ========== 
-&lt;/span&gt;    &lt;span class=&quot;c&quot;&gt;# 请求&quot;/ray&quot;与v2ray配置里的wsSettings下path对齐
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;location&lt;/span&gt; /&lt;span class=&quot;n&quot;&gt;ray&lt;/span&gt; {            
-        &lt;span class=&quot;c&quot;&gt;# 转发地址与v2ray配置里的listen和port对齐
-&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;proxy_pass&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;http&lt;/span&gt;://&lt;span class=&quot;m&quot;&gt;127&lt;/span&gt;.&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;.&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;.&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;:&lt;span class=&quot;m&quot;&gt;9001&lt;/span&gt;;
-
-        &lt;span class=&quot;n&quot;&gt;proxy_redirect&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;off&lt;/span&gt;;
-        &lt;span class=&quot;n&quot;&gt;proxy_http_version&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;.&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;;
-        &lt;span class=&quot;n&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Upgrade&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;http_upgrade&lt;/span&gt;;
-        &lt;span class=&quot;n&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Connection&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;upgrade&quot;&lt;/span&gt;;
-        &lt;span class=&quot;n&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Host&lt;/span&gt; $&lt;span class=&quot;n&quot;&gt;http_host&lt;/span&gt;;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;执行命令让nginx重新加载配置文件，没输出表示配置OK&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ngins &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; reload
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;解释下上面的配置，当使用”https://域名/ray”访问时，nginx将所有请求代理转发到内部应用127.0.0.1:9001上，而这个启动着9001端口的内部应用就是v2ray服务，这样就像正常访问普通站点一样完成我们伟大的出国旅行计划，出关被检查时，GF认为请求的是正常的网页服务从而达到伪装的目的，下面配置v2ray客户端。&lt;/p&gt;
-
-&lt;h3 id=&quot;38-配置连接&quot;&gt;3.8 配置连接&lt;/h3&gt;
-
-&lt;p&gt;使用伪装欺骗的方式旅行，客户端上的配置与普通的稍有区别，具体如下：&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;更改Address和端口号，network协议改成ws，其他保持不变，然后点击transport settings按钮&lt;/li&gt;
-  &lt;li&gt;path值改为/ray&lt;/li&gt;
-  &lt;li&gt;勾选Use TLS，TLS serverName使用配置的域名&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;//via.placeholder.com/599x549?text=&amp;quot;&amp;quot;&quot; alt=&quot;v2ray-client-fake-1&quot; data-src=&quot;//vinnycc.oss-cn-shanghai.aliyuncs.com/20190606/v2ray-client-fake-1.png&quot; /&gt;
-&lt;img src=&quot;//via.placeholder.com/599x549?text=&amp;quot;&amp;quot;&quot; alt=&quot;v2ray-client-fake-2&quot; data-src=&quot;//vinnycc.oss-cn-shanghai.aliyuncs.com/20190606/v2ray-client-fake-2.png&quot; /&gt;
-&lt;img src=&quot;//via.placeholder.com/599x549?text=&amp;quot;&amp;quot;&quot; alt=&quot;v2ray-client-fake-3&quot; data-src=&quot;//vinnycc.oss-cn-shanghai.aliyuncs.com/20190606/v2ray-client-fake-3.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;All done.&lt;/strong&gt; 点击客户端上的load core，✈️ 开启你的环游世界之旅。&lt;/p&gt;
-
-&lt;h2 id=&quot;完整的配置&quot;&gt;完整的配置&lt;/h2&gt;
-
-&lt;p&gt;最后奉上v2ray和nginx完整的配置文件，仅供参考。&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;nginx，&lt;a href=&quot;//vinnycc.oss-cn-shanghai.aliyuncs.com/20190606/default_full&quot;&gt;点击下载&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;v2ray，&lt;a href=&quot;//vinnycc.oss-cn-shanghai.aliyuncs.com/20190606/config_full.json&quot;&gt;点击下载&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>  
-               <pubDate>Thu, 06 Jun 2019 00:00:00 +0800</pubDate>  
-               <link>https://www.wangjun.dev/2019/06/v2ray-build/</link>  
-               <guid isPermaLink="true">https://www.wangjun.dev/2019/06/v2ray-build/</guid>  
-               </item>  
-          
-            <item>  
-               <title>旅行必备 Outline 搭建与使用</title>  
-               <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#1-简介&quot; id=&quot;markdown-toc-1-简介&quot;&gt;1. 简介&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#2-创建实例&quot; id=&quot;markdown-toc-2-创建实例&quot;&gt;2. 创建实例&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#3-一键安装&quot; id=&quot;markdown-toc-3-一键安装&quot;&gt;3. 一键安装&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#4-outline-manager&quot; id=&quot;markdown-toc-4-outline-manager&quot;&gt;4. outline manager&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#5-outline-client&quot; id=&quot;markdown-toc-5-outline-client&quot;&gt;5. outline client&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;1-简介&quot;&gt;1. 简介&lt;/h2&gt;
-
-&lt;p&gt;Outline 基于ss的开源软件，出自于Jigsaw公司，Jigsaw公司前身是Google Ideas，是Google旗下的技术孵化器公司，目标是以技术来克服全球的网络安全难题，
-包括地址网络审查制度、降低网络攻击的威胁，以及防止大众收到网络骚扰等。Outline即为Jigsaw的成果之一。&lt;/p&gt;
-
-&lt;h2 id=&quot;2-创建实例&quot;&gt;2. 创建实例&lt;/h2&gt;
-
-&lt;p&gt;参考 &lt;a href=&quot;//wangjun.dev/2019/06/ssr-build/&quot;&gt;旅行必备 ShadowsocketR 搭建与使用&lt;/a&gt; 中的创建实例。&lt;/p&gt;
-
-&lt;h2 id=&quot;3-一键安装&quot;&gt;3. 一键安装&lt;/h2&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;curl &lt;span class=&quot;nt&quot;&gt;-sS&lt;/span&gt; https://get.docker.com/ | sh
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;systemctl start docker
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;systemctl &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;docker
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;systemctl status docker
-&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;wget &lt;span class=&quot;nt&quot;&gt;-qO-&lt;/span&gt; https://raw.githubusercontent.com/Jigsaw-Code/outline-server/master/src/server_manager/install_scripts/install_server.sh | bash
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;从上述命令可见 outline 的server环境是基于 docker 来做的，首先安装 docker 容器，启动、设置开机自启动、查看启动状态，执行一键脚本安装。
-执行完后会输出一段 json 格式的内容，其实就是一个连接服务端的加密串，将它复制保存到记事本中，后续需要使用。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//via.placeholder.com/599x255?text=&amp;quot;&amp;quot;&quot; alt=&quot;outline-result&quot; data-src=&quot;//vinnycc.oss-cn-shanghai.aliyuncs.com/20190605/outline-result.png&quot; /&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;这里需要注意的是端口号是否在防火墙规则中&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;4-outline-manager&quot;&gt;4. outline manager&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;//via.placeholder.com/599x740?text=&amp;quot;&amp;quot;&quot; alt=&quot;outline-manager&quot; data-src=&quot;//vinnycc.oss-cn-shanghai.aliyuncs.com/20190605/outline-manager.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;点击下载 &lt;a href=&quot;https://github.com/Jigsaw-Code/outline-server/releases&quot;&gt;outline manager&lt;/a&gt; 并安装，将上面输出的 json 加密串配置在 outline manager 中，
-启动并点击钥匙按钮获取连接key，类似如下：&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpETVdTQUlSbFN6dWc=@34.92.208.222:54320/?outline=1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;5-outline-client&quot;&gt;5. outline client&lt;/h2&gt;
-
-&lt;p&gt;点击下载 &lt;a href=&quot;https://github.com/Jigsaw-Code/outline-client/releases&quot;&gt;outline client&lt;/a&gt;，根据自己系统自行按照，使用上一步的key添加连接，保存并启动即可。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;//via.placeholder.com/527x762?text=&amp;quot;&amp;quot;&quot; alt=&quot;outline-client&quot; data-src=&quot;//vinnycc.oss-cn-shanghai.aliyuncs.com/20190605/outline-client.png&quot; /&gt;&lt;/p&gt;
-
-</description>  
-               <pubDate>Thu, 06 Jun 2019 00:00:00 +0800</pubDate>  
-               <link>https://www.wangjun.dev/2019/06/outline-build/</link>  
-               <guid isPermaLink="true">https://www.wangjun.dev/2019/06/outline-build/</guid>  
                </item>  
           
     </channel>  
