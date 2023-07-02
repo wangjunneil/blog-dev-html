@@ -4,8 +4,8 @@
         <title></title>  
         <description>王俊博客，软件改变世界！王俊博客是作者个人知识库、是记录历程回顾的笔记本、是经验教训的资源池， 旨在促进软件开发领域知识与创新的传播，为软件开发中提供帮助。更多是作者本人的经验积累。
 </description>  
-        <link>https://www.wangjun.dev</link>  
-        <atom:link href="https://www.wangjun.dev/feed.xml" rel="self" type="application/rss+xml" />  
+        <link>http://localhost:4000</link>  
+        <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />  
           
             <item>  
                <title>Linux 中使用 tee 和 cat 编辑文本的方式</title>  
@@ -36,8 +36,8 @@ print&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>  
                <pubDate>Thu, 29 Jun 2023 00:00:00 +0800</pubDate>  
-               <link>https://www.wangjun.dev/2023/06/how-to-use-tee-cat-command/</link>  
-               <guid isPermaLink="true">https://www.wangjun.dev/2023/06/how-to-use-tee-cat-command/</guid>  
+               <link>http://localhost:4000/2023/06/how-to-use-tee-cat-command/</link>  
+               <guid isPermaLink="true">http://localhost:4000/2023/06/how-to-use-tee-cat-command/</guid>  
                </item>  
           
             <item>  
@@ -190,8 +190,8 @@ print&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;
 &lt;/ul&gt;
 </description>  
                <pubDate>Fri, 02 Jun 2023 00:00:00 +0800</pubDate>  
-               <link>https://www.wangjun.dev/2023/06/telegram-bot/</link>  
-               <guid isPermaLink="true">https://www.wangjun.dev/2023/06/telegram-bot/</guid>  
+               <link>http://localhost:4000/2023/06/telegram-bot/</link>  
+               <guid isPermaLink="true">http://localhost:4000/2023/06/telegram-bot/</guid>  
                </item>  
           
             <item>  
@@ -294,8 +294,8 @@ print&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;
 &lt;/blockquote&gt;
 </description>  
                <pubDate>Sat, 13 May 2023 00:00:00 +0800</pubDate>  
-               <link>https://www.wangjun.dev/2023/05/python-selenium/</link>  
-               <guid isPermaLink="true">https://www.wangjun.dev/2023/05/python-selenium/</guid>  
+               <link>http://localhost:4000/2023/05/python-selenium/</link>  
+               <guid isPermaLink="true">http://localhost:4000/2023/05/python-selenium/</guid>  
                </item>  
           
             <item>  
@@ -808,8 +808,8 @@ Version: 0.8.17+commit.8df45f5f.Darwin.appleclang
 
 </description>  
                <pubDate>Wed, 21 Dec 2022 00:00:00 +0800</pubDate>  
-               <link>https://www.wangjun.dev/2022/12/pet-shop-dapp/</link>  
-               <guid isPermaLink="true">https://www.wangjun.dev/2022/12/pet-shop-dapp/</guid>  
+               <link>http://localhost:4000/2022/12/pet-shop-dapp/</link>  
+               <guid isPermaLink="true">http://localhost:4000/2022/12/pet-shop-dapp/</guid>  
                </item>  
           
             <item>  
@@ -818,8 +818,8 @@ Version: 0.8.17+commit.8df45f5f.Darwin.appleclang
 &lt;p&gt;&lt;img src=&quot;https://pic.wangjun.dev/i/2022/12/20/94rnm9.png&quot; alt=&quot;infura&amp;amp;georli&quot; /&gt;&lt;/p&gt;
 </description>  
                <pubDate>Tue, 20 Dec 2022 00:00:00 +0800</pubDate>  
-               <link>https://www.wangjun.dev/2022/12/truffle-infura-georli/</link>  
-               <guid isPermaLink="true">https://www.wangjun.dev/2022/12/truffle-infura-georli/</guid>  
+               <link>http://localhost:4000/2022/12/truffle-infura-georli/</link>  
+               <guid isPermaLink="true">http://localhost:4000/2022/12/truffle-infura-georli/</guid>  
                </item>  
           
             <item>  
@@ -857,8 +857,8 @@ truffle version
 &lt;/ul&gt;
 </description>  
                <pubDate>Mon, 19 Dec 2022 00:00:00 +0800</pubDate>  
-               <link>https://www.wangjun.dev/2022/12/truffle-basic-use/</link>  
-               <guid isPermaLink="true">https://www.wangjun.dev/2022/12/truffle-basic-use/</guid>  
+               <link>http://localhost:4000/2022/12/truffle-basic-use/</link>  
+               <guid isPermaLink="true">http://localhost:4000/2022/12/truffle-basic-use/</guid>  
                </item>  
           
             <item>  
@@ -980,8 +980,8 @@ truffle version
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>  
                <pubDate>Mon, 12 Sep 2022 00:00:00 +0800</pubDate>  
-               <link>https://www.wangjun.dev/2022/09/has-no-ifelse/</link>  
-               <guid isPermaLink="true">https://www.wangjun.dev/2022/09/has-no-ifelse/</guid>  
+               <link>http://localhost:4000/2022/09/has-no-ifelse/</link>  
+               <guid isPermaLink="true">http://localhost:4000/2022/09/has-no-ifelse/</guid>  
                </item>  
           
             <item>  
@@ -995,8 +995,8 @@ truffle version
 &lt;p&gt;&lt;img src=&quot;//fla.cdn.bosyun.com/blog/20200610/nmap_opt_sheet.JPG&quot; alt=&quot;nmap-cheat-sheet&quot; /&gt;&lt;/p&gt;
 </description>  
                <pubDate>Fri, 10 Jun 2022 00:00:00 +0800</pubDate>  
-               <link>https://www.wangjun.dev/2022/06/nmap-opr-sheet/</link>  
-               <guid isPermaLink="true">https://www.wangjun.dev/2022/06/nmap-opr-sheet/</guid>  
+               <link>http://localhost:4000/2022/06/nmap-opr-sheet/</link>  
+               <guid isPermaLink="true">http://localhost:4000/2022/06/nmap-opr-sheet/</guid>  
                </item>  
           
             <item>  
@@ -1031,8 +1031,8 @@ truffle version
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>  
                <pubDate>Wed, 27 Nov 2019 00:00:00 +0800</pubDate>  
-               <link>https://www.wangjun.dev/2019/11/nmap-general/</link>  
-               <guid isPermaLink="true">https://www.wangjun.dev/2019/11/nmap-general/</guid>  
+               <link>http://localhost:4000/2019/11/nmap-general/</link>  
+               <guid isPermaLink="true">http://localhost:4000/2019/11/nmap-general/</guid>  
                </item>  
           
             <item>  
@@ -1209,8 +1209,8 @@ truffle version
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>  
                <pubDate>Wed, 20 Nov 2019 00:00:00 +0800</pubDate>  
-               <link>https://www.wangjun.dev/2019/11/confluence-build/</link>  
-               <guid isPermaLink="true">https://www.wangjun.dev/2019/11/confluence-build/</guid>  
+               <link>http://localhost:4000/2019/11/confluence-build/</link>  
+               <guid isPermaLink="true">http://localhost:4000/2019/11/confluence-build/</guid>  
                </item>  
           
     </channel>  
