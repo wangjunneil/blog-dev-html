@@ -209,14 +209,14 @@ print&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;1-使用前提&quot;&gt;1. 使用前提&lt;/h2&gt;
+&lt;h1 id=&quot;1-使用前提&quot;&gt;1. 使用前提&lt;/h1&gt;
 
-&lt;h3 id=&quot;11-依赖库的安装&quot;&gt;1.1. 依赖库的安装&lt;/h3&gt;
+&lt;h2 id=&quot;11-依赖库的安装&quot;&gt;1.1. 依赖库的安装&lt;/h2&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip3 &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;selenium &lt;span class=&quot;c&quot;&gt;# selenium 目前使用4.x.x的版本&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;12-驱动执行文件&quot;&gt;1.2. 驱动执行文件&lt;/h3&gt;
+&lt;h2 id=&quot;12-驱动执行文件&quot;&gt;1.2. 驱动执行文件&lt;/h2&gt;
 
 &lt;p&gt;打开 Chrome 浏览器，输入 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;chrome://version&lt;/code&gt; 查看 Chromium 版本号，如：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Chromium: 112.0.5615.138&lt;/code&gt;，再去 &lt;a href=&quot;https://chromedriver.storage.googleapis.com/index.html&quot;&gt;chrome driver&lt;/a&gt; 找到对应版本的驱动程序，下载保存。&lt;/p&gt;
 
@@ -224,9 +224,9 @@ print&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;
   &lt;p&gt;这里浏览器不局限于 Google Chrome，只要是任何 Chromium 内核构建的都可以，作者使用的是 brave 浏览器&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;2-使用方式&quot;&gt;2. 使用方式&lt;/h2&gt;
+&lt;h1 id=&quot;2-使用方式&quot;&gt;2. 使用方式&lt;/h1&gt;
 
-&lt;h3 id=&quot;21-快速开始&quot;&gt;2.1. 快速开始&lt;/h3&gt;
+&lt;h2 id=&quot;21-快速开始&quot;&gt;2.1. 快速开始&lt;/h2&gt;
 
 &lt;p&gt;下面的程序作用是自动打开浏览器进入百度搜索，输入关键字后点击搜索按钮，完成自动执行，浏览器不关闭。&lt;/p&gt;
 
@@ -262,7 +262,7 @@ print&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;driver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;22-浏览器参数&quot;&gt;2.2. 浏览器参数&lt;/h3&gt;
+&lt;h2 id=&quot;22-浏览器参数&quot;&gt;2.2. 浏览器参数&lt;/h2&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;webdriver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ChromeOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 
